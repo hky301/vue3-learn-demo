@@ -1,6 +1,23 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+import HelloWorld from "@/components/HelloWorld.vue";
+import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
+
+// onBeforeMount(() => {
+//   console.log("before mount");
+// });
+
+// onMounted(() => {
+//   console.log("mounted");
+// });
+
+// const count = ref(0);
+// const buttonRef = ref();
+
+// onUpdated(() => {
+//   // text content should be the same as current `count.value`
+//   console.log(buttonRef.value.textContent);
+// });
 </script>
 
 <template>
@@ -21,7 +38,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 #app {
   max-width: 1280px;
