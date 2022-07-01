@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
-import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
+import Mouse from "@/components/mouse.vue";
+import PiniaDemo from "@/components/PiniaDemo.vue";
+import VuexDemo from "@/components/VuexDemo.vue";
+import TreeDemo from "@/components/treeDemo.vue";
 
 // onBeforeMount(() => {
 //   console.log("before mount");
@@ -18,6 +22,9 @@ import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
 //   // text content should be the same as current `count.value`
 //   console.log(buttonRef.value.textContent);
 // });
+const aa = 1;
+const bb = 2;
+const c = 3;
 </script>
 
 <template>
@@ -33,6 +40,15 @@ import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
       </nav>
     </div>
   </header>
+
+  <main>
+    <Mouse />
+    <p>----------------------------------------------------</p>
+    <PiniaDemo />
+    <p>----------------------------------------------------</p>
+    <VuexDemo />
+    <!-- <TreeDemo /> -->
+  </main>
 
   <RouterView />
 </template>

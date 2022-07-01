@@ -12,12 +12,28 @@ import {
   ref,
 } from "vue";
 
+import emitter from "@/utils/eventbus";
+import EmitterDemo from "@/components/emitterDemo.vue";
+
+// TODO:
+// FIXME:
 onBeforeMount(() => {
   console.log("before mount");
+  let a = "啊，${name}";
 });
+
+const name = ref("123");
 
 onMounted(() => {
   console.log("mounted");
+
+  emitter.on("changeName", () => {
+    console.log("name", name.value);
+  });
+
+  setTimeout(() => {
+    name.value = "456";
+  }, 1000);
 });
 
 const count = ref(0);
@@ -40,6 +56,11 @@ onBeforeUnmount(() => {
 onUnmounted(() => {
   console.log("unmounted");
 });
+
+const name2 = ref("123");
+function changeName2() {
+  name2.value = "456";
+}
 </script>
 
 <template>
@@ -49,5 +70,11 @@ onUnmounted(() => {
     <Ref />
     <TheWelcome /> -->
     <Diff />
+
+    <div class="container-box"></div>
+    <div>
+      <button @click="changeName2">修改name</button>
+      <EmitterDemo :name="name2" />
+    </div>
   </main>
 </template>
