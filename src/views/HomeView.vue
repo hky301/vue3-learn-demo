@@ -61,6 +61,8 @@ const name2 = ref("123");
 function changeName2() {
   name2.value = "456";
 }
+
+const isEditing = ref(false);
 </script>
 
 <template>
@@ -76,5 +78,27 @@ function changeName2() {
       <button @click="changeName2">修改name</button>
       <EmitterDemo :name="name2" />
     </div>
+
+    <transition>
+      <button v-if="isEditing" v-on:click="isEditing = false">Save</button>
+      <button v-else v-on:click="isEditing = true">Edit</button>
+    </transition>
   </main>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: all 1s;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.v-leave-active {
+  position: absolute;
+}
+</style>

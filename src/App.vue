@@ -25,6 +25,15 @@ import TreeDemo from "@/components/treeDemo.vue";
 const aa = 1;
 const bb = 2;
 const c = 3;
+
+const trs = 1;
+const val = 2;
+const str =
+  "<td style='width: auto;'><input type='text' class='mui-input-clean' value='" +
+  val +
+  "' id= 'sjkc _" +
+  trs +
+  "'/> </td>";
 </script>
 
 <template>
@@ -51,6 +60,8 @@ const c = 3;
   </main>
 
   <RouterView />
+
+  <input type="text" value=" 123" />
 </template>
 
 <style>
